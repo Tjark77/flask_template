@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <!-- page content -->
+        <div class="x_title">
+            <font size="4">Test</font>
+        </div>
+        <div class="col-1">
+            <button type="button" class="btn-close" onclick="send();" ></button>
+        </div>
+    </body>
+</html>
+
+<script>
+    var globalVar = "";
+
+    function func(){
+        console.log("Funktionsaufruf func");
+    }
+
+    $(document).ready(function () {
+        $.ajax({
+            type: 'GET',
+            async: true,
+            url: '/ajax/get',
+            dataType: 'json',
+            crossDomain: true,
+            success: function (responseData) {
+                console.log("Ergebnis der Get-Anfrage");
+                console.log(responseData);
+            }
+        });
+    });
+
+    function send(){
+        console.log("Button pressed");
+        var dict = {    "id": "1",
+                        "name": "foo"
+        };
+        // Leitet das Dictionary weiter
+        $.ajax({
+            type: "POST",
+            async: true,
+            url: "/ajax/post",
+            contentType: "application/json; charset=UTF-8",
+            dataType: "json",
+            data: JSON.stringify(dict),
+            success: (data) => {
+                console.log(data)
+            },
+            error: (error) => {
+                console.log(error);
+            }
+        });
+    }
+</script>

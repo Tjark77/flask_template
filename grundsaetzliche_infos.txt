@@ -1,0 +1,21 @@
+Pakete:
+flask (Framework)
+flask_cors
+mysql-connector-python
+sqlalchemy (Datenbankzugriff)
+sqlacodegen (ORM)
+black (auto pep-8 formatierung mit "black *")
+asyncio (Datenbankzugriff asyncron)
+asyncmy (Datenbankzugriff asyncron)
+requests
+flask[async]
+pymysql
+
+Bei UTF-16 Problem:
+Get-Content orm.py -Encoding Unicode | Set-Content -Encoding UTF8 orm2.py
+
+Zun Starten:
+python run.py
+
+ORM-Codegenerierung:
+sqlacodegen mysql+pymysql://root@localhost/DATENBANKNAME --outfile FILENAME.py

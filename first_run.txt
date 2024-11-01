@@ -1,0 +1,11 @@
+pip install flask
+pip install flask_cors
+pip install mysql-connector-python
+pip install sqlalchemy
+pip install sqlacodegen
+pip install black
+pip install asyncio
+pip install asyncmy
+pip install requests
+pip install flask[async]
+pip install pymysql
